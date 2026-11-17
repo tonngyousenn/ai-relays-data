@@ -1,0 +1,68 @@
+name: Submit a Listing
+description: Suggest an API relay, subscription channel, or VPS / cloud hosting plan.
+title: "[Listing] "
+body:
+  - type: markdown
+    attributes:
+      value: |
+        English, Simplified Chinese, and Russian submissions are welcome.
+        Provide public evidence. Submission does not automatically publish a listing or grant certification.
+  - type: dropdown
+    id: category
+    attributes:
+      label: Listing category
+      options:
+        - AI API relay
+        - AI subscription channel or offer
+        - VPS or cloud hosting merchant / plan
+    validations:
+      required: true
+  - type: input
+    id: name
+    attributes:
+      label: Official service, merchant, or product name
+    validations:
+      required: true
+  - type: input
+    id: official_url
+    attributes:
+      label: Official website or product URL
+      placeholder: https://
+    validations:
+      required: true
+  - type: textarea
+    id: details
+    attributes:
+      label: Service details and specifications
+      description: Include relevant models, product entitlements, delivery method, regions, configuration, currency, and billing term. Mark unknown information as unknown.
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Public evidence and observation date
+      description: Link to pricing pages, documentation, or other public evidence. State the date checked and any pricing or eligibility conditions.
+    validations:
+      required: true
+  - type: dropdown
+    id: relationship
+    attributes:
+      label: Your relationship to the service
+      options:
+        - Independent user
+        - Merchant, employee, or affiliated contributor
+        - Other
+    validations:
+      required: true
+  - type: textarea
+    id: context
+    attributes:
+      label: Additional context
+      description: Optional notes, known limitations, or possible duplicate records.
+  - type: checkboxes
+    id: public_information
+    attributes:
+      label: Public information
+      options:
+        - label: I have not included passwords, API keys, private customer information, or unredacted order records.
+          required: true

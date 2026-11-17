@@ -1,0 +1,64 @@
+name: Suggest a Data Source
+description: Propose an official page, public API, directory, feed, or independent test source.
+title: "[Source] "
+body:
+  - type: markdown
+    attributes:
+      value: English, Simplified Chinese, and Russian submissions are welcome. A source proposal is reviewed before import or attribution is approved.
+  - type: input
+    id: name
+    attributes:
+      label: Source name
+    validations:
+      required: true
+  - type: input
+    id: url
+    attributes:
+      label: Public source or documentation URL
+      placeholder: https://
+    validations:
+      required: true
+  - type: dropdown
+    id: source_type
+    attributes:
+      label: Source type
+      options:
+        - Official website or documentation
+        - Merchant submission
+        - Third-party directory
+        - Independent test or assessment
+    validations:
+      required: true
+  - type: textarea
+    id: coverage
+    attributes:
+      label: Coverage and available fields
+      description: Explain which listings, prices, specifications, availability information, or test results it provides.
+    validations:
+      required: true
+  - type: textarea
+    id: access
+    attributes:
+      label: Access method and update behavior
+      description: Describe public pages, API documentation, feeds, or files. Include update frequency if known. Do not post access tokens.
+    validations:
+      required: true
+  - type: textarea
+    id: mapping
+    attributes:
+      label: Field mapping, units, and limitations
+      description: Optional notes on source IDs, currencies, billing terms, missing fields, or conflicting records.
+  - type: textarea
+    id: attribution
+    attributes:
+      label: Attribution and reuse information
+      description: Link to known attribution or reuse conditions. Write unknown if they have not been established.
+    validations:
+      required: true
+  - type: checkboxes
+    id: public_information
+    attributes:
+      label: Public information
+      options:
+        - label: I have not included credentials or private records.
+          required: true

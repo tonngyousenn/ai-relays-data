@@ -1,0 +1,54 @@
+name: Report a Correction
+description: Report incorrect data, price changes, broken links, or duplicate listings.
+title: "[Correction] "
+body:
+  - type: markdown
+    attributes:
+      value: English, Simplified Chinese, and Russian submissions are welcome. Include public evidence or redacted supporting material.
+  - type: input
+    id: record
+    attributes:
+      label: Directory page, record ID, or listing name
+    validations:
+      required: true
+  - type: dropdown
+    id: issue_type
+    attributes:
+      label: What needs to change?
+      options:
+        - Price or billing term
+        - Product or hardware specifications
+        - Availability or stock
+        - Broken or incorrect link
+        - Duplicate record
+        - Source attribution
+        - Other
+    validations:
+      required: true
+  - type: textarea
+    id: current
+    attributes:
+      label: Current information and the problem
+    validations:
+      required: true
+  - type: textarea
+    id: proposed
+    attributes:
+      label: Proposed correction
+      description: State the correct value, or explain why the current value should become unknown. Include currency, unit, term, and conditions for prices.
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Evidence and observation date
+      description: Link to public supporting pages or attach redacted evidence. State when you checked the information.
+    validations:
+      required: true
+  - type: checkboxes
+    id: public_information
+    attributes:
+      label: Public information
+      options:
+        - label: I have not included passwords, API keys, private customer information, or unredacted order records.
+          required: true
